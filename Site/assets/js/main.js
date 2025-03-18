@@ -6,18 +6,15 @@
 * License: https://bootstrapmade.com/license/
 */
 
-document.addEventListener("DOMContentLoaded", function() {
-  let count = localStorage.getItem("visitorCount");
+//counter
+async function updateVisitorCount() {
+  const response = await fetch('https://your-api-id.execute-api.us-east-1.amazonaws.com/update-visitor-count');
+  const data = await response.json();
+  document.getElementById('visitorCount').innerText = `Visitors: ${data.visitor_count}`;
+}
 
-  if (count === null) {
-    count = 1;
-  } else{
-    count = parseInt(count) + 1;
-  }
-
-  localStorage.setItem("VisitorCount", count);
-  document.getElementById("visitor-counter").textContent = "This site has been visited: " + count;
-});
+updateVisitorCount();
+//counter ends
 
 (function() {
   "use strict";
