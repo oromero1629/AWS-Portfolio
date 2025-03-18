@@ -7,13 +7,14 @@
 */
 
 //counter
-async function updateVisitorCount() {
-  const response = await fetch('https://your-api-id.execute-api.us-east-1.amazonaws.com/update-visitor-count');
-  const data = await response.json();
-  document.getElementById('visitorCount').innerText = `Visitors: ${data.visitor_count}`;
+const counter = document.querySelector(".visitor-counter");
+async function updateCounter() {
+  let response = await fetch("https://bmclztuamxffgilmvimzdlxdae0swytj.lambda-url.us-east-1.on.aws/");
+  let data = await response.json();
+  counter.innerHTML = ` This site has been visited: ${data} times`;
 }
 
-updateVisitorCount();
+updateCounter();
 //counter ends
 
 (function() {
