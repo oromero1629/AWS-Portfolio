@@ -1,2 +1,10 @@
 # AWS-Portfolio
-This is my portfolio that is going to be hosted using AWS cloud services following the Cloud Resume Challenge for AWS.
+This is my web resume that was built with Front End templates and hosted in AWS Cloud.
+
+Tech Stack
+    - S3
+    - AWS CloudFront
+    - Certificate Manager
+    - AWS Lambda
+    - DynamoDB
+    - Github Actions
